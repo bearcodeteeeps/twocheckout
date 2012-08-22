@@ -8,6 +8,8 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Ruby wrapper for 2Checkout API}
   gem.homepage      = "http://github.com/gnapse/twocheckout"
 
+  gem.add_dependency("rest-client", "~> 1.6.7")
+
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
