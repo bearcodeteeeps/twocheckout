@@ -17,7 +17,15 @@ module Twocheckout
     end
 
     def order_number
-      self.demo? ? 1 : super.order_number
+      self.demo? ? 1 : super.order_number.to_i
+    end
+
+    def product_id
+      super.product_id.to_i
+    end
+
+    def total_as_float
+      super.total.to_f
     end
 
     #
@@ -25,7 +33,7 @@ module Twocheckout
     # processed and approved by 2Checkout.
     #
     def valid?
-      Digest::MD5.hexdigest("#{@@secret}#{@@sid}#{order_number}#{total}").upcase == key
+      Digest::MD5.hexdigest("#{@@secret}#{@@sid}#{order_number}#{super.total}").upcase == key
     end
 
     protected
