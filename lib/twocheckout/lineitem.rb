@@ -6,6 +6,10 @@ module Twocheckout
       Twocheckout::API.request(:post, 'sales/refund_lineitem', opts)
     end
 
+    def active?
+      self.billing.recurring_status == 'active'
+    end
+
     protected
 
     def _key

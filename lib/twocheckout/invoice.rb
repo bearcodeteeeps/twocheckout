@@ -34,6 +34,13 @@ module Twocheckout
       Twocheckout::API.request(:post, 'sales/refund_invoice', opts)
     end
 
+    #
+    # Get active recurring lineitems
+    #
+    def active_lineitems
+      @active_lineitems ||= lineitems.select(&:active?).freeze
+    end
+
     protected
 
     def _key
