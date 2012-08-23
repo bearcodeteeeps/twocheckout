@@ -41,6 +41,10 @@ module Twocheckout
       @active_lineitems ||= lineitems.select(&:active?).freeze
     end
 
+    def stop_recurring!
+      active_lineitems.each { |li| li.stop_recurring! }
+    end
+
     protected
 
     def _key

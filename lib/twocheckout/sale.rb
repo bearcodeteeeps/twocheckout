@@ -49,6 +49,10 @@ module Twocheckout
       invoices.last.active_lineitems
     end
 
+    def stop_recurring!
+      active_lineitems.each { |li| li.stop_recurring! }
+    end
+
     protected
 
     def _key

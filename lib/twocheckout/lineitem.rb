@@ -10,6 +10,10 @@ module Twocheckout
       self.billing.recurring_status == 'active'
     end
 
+    def stop_recurring!
+      Twocheckout::API.request(:post, 'sales/stop_lineitem_recurring', lineitem_id: self.lineitem_id)
+    end
+
     protected
 
     def _key
