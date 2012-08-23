@@ -37,6 +37,11 @@ module Twocheckout
       return @invoice
     end
 
+    def refund!(opts)
+      opts = opts.merge(:sale_id => self.sale_id)
+      Twocheckout::API.request(:post, 'sales/refund_invoice', opts)
+    end
+
     protected
 
     def _key
