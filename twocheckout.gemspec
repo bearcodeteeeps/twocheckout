@@ -2,11 +2,11 @@
 require File.expand_path('../lib/twocheckout/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Ernesto Garcia"]
-  gem.email         = ["ernesto+git@gnapse.com"]
+  gem.authors       = ["Craig Christenson", "Ernesto Garcia"]
+  gem.email         = ["christensoncraig@gmail.com", "ernesto+git@gnapse.com"]
   gem.description   = %q{twocheckout provides a nice ruby interface to access the 2Checkout API}
   gem.summary       = %q{Ruby wrapper for 2Checkout API}
-  gem.homepage      = "http://github.com/gnapse/twocheckout"
+  gem.homepage      = "http://github.com/craigchristenson/twocheckout"
 
   gem.add_dependency("rest-client", "~> 1.6.7")
 
