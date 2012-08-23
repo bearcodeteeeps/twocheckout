@@ -7,8 +7,8 @@ module Twocheckout
   class PurchaseResult < HashObject
 
     def self.credentials=(opts)
-      @@sid = opts['sid']
-      @@secret = opts['secret']
+      @@sid = opts[:sid]
+      @@secret = opts[:secret]
       opts
     end
 
