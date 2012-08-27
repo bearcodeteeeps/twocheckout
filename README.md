@@ -53,7 +53,7 @@ And this is just the beginning. We plan to provide an interface to every single 
 
 ORM-like interfaces are not a panacea. Sometimes it may be more convenient to perform low-level API calls directly:
 
-    sales = Twocheckout::API.request(:get 'sales/list_sales')
+    sales = Twocheckout::API.request(:get, 'sales/list_sales')
     first_sale = sales['sale_summary'].first
 
 In this case, the resulting object is a hash containing the parsed JSON response obtained from the call.
