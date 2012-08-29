@@ -29,7 +29,7 @@ module Twocheckout
     end
 
     def inspect
-      "#<#{self.class.name}:#{self._key}>"
+      "#<#{self.class.name}:#{self._key}> #{pp @hash}"
     end
 
     protected
