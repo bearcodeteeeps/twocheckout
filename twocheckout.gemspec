@@ -9,6 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "http://github.com/craigchristenson/twocheckout"
 
   gem.add_dependency("rest-client", "~> 1.6.7")
+  gem.add_development_dependency("rspec", "~> 2.12.0")
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -25,7 +25,11 @@ module Twocheckout
         end
         return result
       end
-      super.method_missing name
+      super(name.to_sym)
+    end
+
+    def respond_to?(name)
+      @hash.key?(name.to_s) || super
     end
 
     def inspect
